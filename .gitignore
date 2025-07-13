@@ -1,0 +1,24 @@
+
+# Python
+__pycache__/
+*.pyc
+
+# Checkpoint data
+/tmp/
+*.log
+
+# Docker
+*.pid
+*.sock
+*.db
+.env
+.dockerignore
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Spark logs
+metastore_db/
+derby.log
