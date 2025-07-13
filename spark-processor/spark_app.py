@@ -1,4 +1,3 @@
-
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, col, udf
 from pyspark.sql.types import StructType, StringType
