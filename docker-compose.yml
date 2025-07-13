@@ -37,16 +37,20 @@ services:
       - elasticsearch
 
   twitter-stream:
-    build: ./twitter-stream
+    build:
+      context: ./twitter-stream
+    environment:
+      - BEARER_TOKEN=your_twitter_bearer_token
     depends_on:
       - kafka
-    environment:
-      - KAFKA_BROKER=kafka:9092
 
   spark-processor:
-    build: ./spark-processor
+    build:
+      context: ./spark-processor
+    environment:
+      - SPARK_MODE=client
+      - ELASTICSEARCH_HOST=elasticsearch
+      - KAFKA_BROKER=kafka:9092
     depends_on:
       - kafka
       - elasticsearch
-    environment:
-      - SPARK_MODE=client

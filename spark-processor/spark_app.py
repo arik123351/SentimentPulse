@@ -32,7 +32,7 @@ es_write_conf = {
 }
 
 query = output_df.writeStream \
-    .format("es") \
+    .format("org.elasticsearch.spark.sql") \
     .options(**es_write_conf) \
     .option("checkpointLocation", "/tmp/checkpoints") \
     .start()
